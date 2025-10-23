@@ -1,12 +1,17 @@
 // write cool JS hwere!!
 let myBigImg=document.getElementById("bigImg")
-
 let smallImgz=document.getElementsByClassName("smallImgz")
-console.log(smallImgz)
+
+
 
 Array.from(smallImgz).forEach(element => {
-    console.log(element)
-    element.addEventListner("click",(event)=>{
-        alert("test")
+
+    element.addEventListener("click",(event)=>{
+        let mySmallImg=event.target.src
+        let myBigImgTemp=myBigImg.src
+
+        //switch
+        myBigImg.src=mySmallImg
+        event.target.src=myBigImgTemp
     })
 });
